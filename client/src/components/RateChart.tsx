@@ -102,6 +102,7 @@ export const RateChart = ({ data }: Props) => {
       .attr("cy", d => y(d.rate))
       .attr("r", 4)
       .attr("fill", "#b2d141")
+      .style("cursor", "pointer")
       .on("mouseover", function (event, d) {
         tooltip
           .html(`
