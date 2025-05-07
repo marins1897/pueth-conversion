@@ -32,8 +32,6 @@ export const RateChart = ({ data }: Props) => {
       date: new Date(d.timestamp),
     }));
 
-    const tickDates = parsedData.map(d => d.date);
-
     const x = d3.scaleTime()
       .domain(d3.extent(parsedData, d => d.date) as [Date, Date])
       .range([0, width]);
@@ -62,7 +60,7 @@ export const RateChart = ({ data }: Props) => {
     .attr("transform", `translate(0,${height})`)
     .call(
       d3.axisBottom(x)
-        .tickValues(tickDates)
+      .ticks(isMobile ? 4 : 6)
         .tickFormat((domainValue) => d3.timeFormat("%H:%M")(domainValue as Date)));
 
     // Y Axis
