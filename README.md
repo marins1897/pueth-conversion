@@ -5,7 +5,7 @@ Built with React, TypeScript, Node, Express, PrismaORM, and PostgreSQL.
 
 ## Live Demo
 
-some-url
+> <https://pueth-client.vercel.app/>
 
 ## Local Setup
 
