@@ -8,6 +8,9 @@ dotenv.config();
 
 const app = express();
 app.use(cors());
+app.use(cors({
+  origin: process.env.WEB_ORIGIN || "http://localhost:3000"
+}));
 app.use(express.json());
 
 app.use('/api/rates', ratesRouter);
